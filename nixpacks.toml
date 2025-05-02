@@ -8,4 +8,4 @@ cmds = ["python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip in
 cmds = ["chmod +x start.sh"]
 
 [start]
-cmd = "./start.sh" 
+cmd = "bash start.sh" 
