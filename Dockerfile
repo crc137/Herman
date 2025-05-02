@@ -13,10 +13,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Make scripts executable
-RUN chmod +x start.sh run_telegram_bot.sh launch_both.sh
+RUN chmod +x start.sh run_bot.py admin_panel.py
 
-# Copy supervisor configuration
-COPY supervisor.conf /etc/supervisor/conf.d/herman.conf
+# Expose port for admin panel
+EXPOSE 8080
 
-# Use supervisor to manage both processes
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/herman.conf"] 
+# Run the setup script and start both applications
+CMD ["./start.sh"] 
